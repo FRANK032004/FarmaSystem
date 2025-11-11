@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión Farmacéutica - TICs II</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <i class="fas fa-pills"></i>
+            <h2>FarmaSystem</h2>
+        </div>
+        <nav class="menu">
+            <a href="#" class="menu-item active" data-module="dashboard">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="menu-item" data-module="pos">
+                <i class="fas fa-cash-register"></i>
+                <span>Punto de Venta</span>
+            </a>
+            <a href="#" class="menu-item" data-module="inventario">
+                <i class="fas fa-boxes"></i>
+                <span>Inventario</span>
+            </a>
+            <a href="#" class="menu-item" data-module="clientes">
+                <i class="fas fa-users"></i>
+                <span>Clientes</span>
+            </a>
+            <a href="#" class="menu-item" data-module="recetas">
+                <i class="fas fa-prescription"></i>
+                <span>Recetas Médicas</span>
+            </a>
+            <a href="#" class="menu-item" data-module="proveedores">
+                <i class="fas fa-truck"></i>
+                <span>Proveedores y Compras</span>
+            </a>
+            <a href="#" class="menu-item" data-module="reportes">
+                <i class="fas fa-chart-bar"></i>
+                <span>Reportes</span>
+            </a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+            <div>
+                <p class="user-name">Profesor TICs II</p>
+                <p class="user-role">Administrador</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <button class="toggle-sidebar" id="toggleSidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="header-right">
+                <div class="date-time" id="dateTime"></div>
+                <button class="btn-help" id="btnHelp">
+                    <i class="fas fa-question-circle"></i> Ayuda
+                </button>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content" id="content">
+            <!-- Los módulos se cargarán aquí dinámicamente -->
+        </div>
+    </div>
+
+    <!-- Modal de Ayuda -->
+    <div class="modal" id="modalHelp">
+        <div class="modal-content modal-large">
+            <span class="close">&times;</span>
+            <h2><i class="fas fa-info-circle"></i> Guía del Sistema Farmacéutico</h2>
+            <div class="help-content">
+                <div class="help-section">
+                    <h3>🏥 ¿Qué es este sistema?</h3>
+                    <p>Este es un sistema de gestión farmacéutica educativo que simula las operaciones reales de una farmacia o botica.</p>
+                </div>
+                <div class="help-section">
+                    <h3>📱 Módulos Principales:</h3>
+                    <ul>
+                        <li><strong>Dashboard:</strong> Vista general del estado de la farmacia</li>
+                        <li><strong>Punto de Venta:</strong> Realiza ventas y emite boletas/facturas</li>
+                        <li><strong>Inventario:</strong> Gestiona productos, stock y vencimientos</li>
+                        <li><strong>Clientes:</strong> Registro y historial de pacientes</li>
+                        <li><strong>Recetas Médicas:</strong> Valida y dispensa medicamentos controlados</li>
+                        <li><strong>Reportes:</strong> Análisis de ventas y movimientos</li>
+                    </ul>
+                </div>
+                <div class="help-section">
+                    <h3>💾 Datos del Sistema:</h3>
+                    <p>Los datos se guardan en el navegador (localStorage). Son temporales y se perderán si se borran los datos del navegador.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/modules/dashboard.js"></script>
+    <script src="js/modules/pos.js"></script>
+    <script src="js/modules/inventario.js"></script>
+    <script src="js/modules/clientes.js"></script>
+    <script src="js/modules/recetas.js"></script>
+    <script src="js/modules/proveedores.js"></script>
+    <script src="js/modules/reportes.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

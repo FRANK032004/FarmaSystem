@@ -1,0 +1,238 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║      🏥 SISTEMA DE GESTIÓN FARMACÉUTICA - TICs II 🏥                 ║
+║                                                                      ║
+║              Sistema Educativo para Estudiantes de Farmacia         ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+
+📂 ARCHIVOS DEL SISTEMA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Para ESTUDIANTES:
+  
+  ▶ index.html            - SISTEMA PRINCIPAL (¡Abrir este archivo!)
+  ▶ guia-rapida.html      - Guía rápida imprimible
+  ▶ README.md             - Documentación completa
+
+
+Para PROFESORES:
+
+  ▶ GUIA-PROFESOR.md      - Guía pedagógica completa
+  ▶ Plan de clases
+  ▶ Ejercicios evaluables
+  ▶ Tips de enseñanza
+
+
+🚀 INICIO RÁPIDO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OPCIÓN 1 - Uso Directo (MÁS FÁCIL)
+───────────────────────────────────
+  1. Hacer doble clic en: index.html
+  2. Se abrirá en su navegador
+  3. ¡LISTO! Ya puede usar el sistema
+
+
+OPCIÓN 2 - Con XAMPP (Recomendado para clase)
+──────────────────────────────────────────────
+  1. Iniciar XAMPP Control Panel
+  2. Hacer clic en "Start" en Apache
+  3. Abrir navegador
+  4. Ir a: http://localhost/SISTEMA%20FARMACIA/
+
+
+📱 MÓDULOS DEL SISTEMA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📊 Dashboard          - Panel de control con estadísticas
+  💰 Punto de Venta     - Sistema completo de ventas (POS)
+  📦 Inventario         - Gestión de productos y stock
+  👥 Clientes           - Registro de pacientes/clientes
+  📝 Recetas Médicas    - Control de prescripciones
+  📈 Reportes           - Análisis y estadísticas
+
+
+✨ CARACTERÍSTICAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✅ 100% Funcional sin instalación compleja
+  ✅ 25 productos precargados de ejemplo
+  ✅ 5 clientes de ejemplo
+  ✅ Interfaz profesional y moderna
+  ✅ Datos guardados en el navegador (temporales)
+  ✅ Alertas automáticas de vencimientos y stock
+  ✅ Generación de comprobantes (Boleta/Factura)
+  ✅ Control de medicamentos con receta
+  ✅ Reportes y estadísticas completas
+
+
+🎯 PRIMEROS PASOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Abrir el sistema (index.html)
+
+2. Explorar el Dashboard
+   → Verá estadísticas generales
+   → Observe las alertas automáticas
+
+3. Realizar su primera venta
+   → Ir a "Punto de Venta"
+   → Buscar "Paracetamol"
+   → Hacer clic para agregar al carrito
+   → Procesar venta
+
+4. Ver el comprobante generado
+   → ¡Felicidades! Ya realizó su primera venta
+
+
+📚 EJERCICIO INICIAL SUGERIDO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Tarea: "Mi Primera Jornada en la Farmacia"
+
+  1. Revisar alertas del Dashboard
+  2. Realizar 3 ventas diferentes
+  3. Registrar 1 cliente nuevo
+  4. Agregar 1 producto al inventario
+  5. Ver el reporte de ventas
+
+  Tiempo estimado: 30 minutos
+
+
+⚠️ IMPORTANTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  • Los datos se guardan en el NAVEGADOR (localStorage)
+  • Son TEMPORALES (se pierden si borra caché del navegador)
+  • Para práctica educativa, no para uso comercial real
+  • Cada navegador tiene sus propios datos independientes
+
+
+🆘 AYUDA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Dentro del sistema:
+    → Botón "Ayuda" (esquina superior derecha)
+    → Tooltips en los formularios
+
+  Documentación:
+    → README.md - Documentación completa
+    → guia-rapida.html - Guía imprimible
+    → GUIA-PROFESOR.md - Para el docente
+
+  Atajos de teclado:
+    → Ctrl + K: Ir a Punto de Venta
+    → Ctrl + H: Abrir ayuda
+    → Escape: Cerrar ventanas
+
+
+🔄 RESETEAR SISTEMA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Si quiere volver a los datos iniciales:
+  
+  Opción 1:
+    1. Ir a módulo "Reportes"
+    2. Clic en "Resetear Sistema"
+    3. Confirmar
+
+  Opción 2:
+    1. Presionar F12 (consola del navegador)
+    2. Escribir: localStorage.clear()
+    3. Presionar Enter
+    4. Recargar página (F5)
+
+
+📊 DATOS PRECARGADOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Productos: 25 medicamentos y productos farmacéuticos
+    → Analgésicos (Paracetamol, Ibuprofeno, etc.)
+    → Antibióticos (Amoxicilina, Azitromicina, etc.)
+    → Antihistamínicos
+    → Antihipertensivos
+    → Vitaminas
+    → Productos de higiene
+    → Equipos médicos
+
+  Clientes: 5 clientes de ejemplo
+    → Con datos completos
+    → Listos para usar en ventas
+
+
+💡 CONCEPTOS QUE APRENDERÁ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✓ Flujo de trabajo en farmacias reales
+  ✓ Control de inventario farmacéutico
+  ✓ Validación de recetas médicas
+  ✓ Gestión de productos vencidos
+  ✓ Atención al cliente/paciente
+  ✓ Tipos de comprobantes (Boleta/Factura)
+  ✓ Cálculo de impuestos (IGV)
+  ✓ Medicamentos controlados vs libres
+  ✓ Análisis de ventas y reportes
+  ✓ Toma de decisiones basada en datos
+
+
+🎓 OBJETIVOS PEDAGÓGICOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Al finalizar la práctica, usted podrá:
+
+  ✅ Manejar un sistema de punto de venta farmacéutico
+  ✅ Controlar inventario y detectar alertas importantes
+  ✅ Validar y registrar recetas médicas correctamente
+  ✅ Entender el flujo completo de una farmacia
+  ✅ Interpretar reportes para toma de decisiones
+  ✅ Aplicar normativas farmacéuticas básicas
+
+
+🌟 CARACTERÍSTICAS DESTACADAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  🔔 Alertas Automáticas
+    • Productos vencidos
+    • Próximos a vencer (90 días)
+    • Stock bajo
+    • Sin stock
+
+  🔐 Validaciones
+    • DNI de 8 dígitos
+    • Teléfono de 9 dígitos
+    • Email válido
+    • Stock disponible antes de vender
+    • Receta médica para medicamentos controlados
+
+  📑 Comprobantes
+    • Boleta de venta
+    • Factura
+    • Numeración automática
+    • Cálculo de IGV (18%)
+    • Imprimibles
+
+
+📞 SOPORTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Sistema desarrollado para fines educativos
+  Curso: TICs II - Farmacia
+  Año: 2024
+
+  Código abierto y modificable para adaptación pedagógica
+
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║                  ¡LISTO PARA COMENZAR! 🚀                            ║
+║                                                                      ║
+║          Haga doble clic en "index.html" para empezar               ║
+║                                                                      ║
+║              ¡Éxito en su aprendizaje! 🎓                            ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+
+Última actualización: Octubre 2024
