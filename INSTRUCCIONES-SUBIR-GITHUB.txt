@@ -1,0 +1,179 @@
+═══════════════════════════════════════════════════════════════════
+    INSTRUCCIONES PASO A PASO PARA SUBIR A GITHUB PAGES
+═══════════════════════════════════════════════════════════════════
+
+✅ CAMBIOS REALIZADOS (Ya están listos en tu PC):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✓ index.html → Rutas actualizadas con ./ 
+  ✓ .gitignore → Archivo creado
+  ✓ CHECKLIST-GITHUB.md → Guía detallada creada
+  ✓ Este archivo de instrucciones
+
+═══════════════════════════════════════════════════════════════════
+    MÉTODO RECOMENDADO: GITHUB DESKTOP (FÁCIL)
+═══════════════════════════════════════════════════════════════════
+
+PASO 1: DESCARGAR E INSTALAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. Ir a: https://desktop.github.com/
+  2. Descargar e instalar GitHub Desktop
+  3. Abrir la aplicación
+  4. Iniciar sesión con tu cuenta de GitHub
+
+PASO 2: CLONAR TU REPOSITORIO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. En GitHub Desktop, clic en "File" → "Clone repository"
+  2. Buscar o escribir: FRANK032004/FarmaSystem
+  3. Elegir dónde guardarlo (ej: C:\GitHub\FarmaSystem)
+  4. Clic en "Clone"
+
+PASO 3: COPIAR LOS ARCHIVOS ACTUALIZADOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. Abrir dos ventanas del explorador de Windows:
+     
+     Ventana A: C:\xampp\htdocs\SISTEMA FARMACIA
+     Ventana B: C:\GitHub\FarmaSystem (o donde lo clonaste)
+  
+  2. Seleccionar TODO de la Ventana A:
+     - index.html ✓
+     - css/ (carpeta completa) ✓
+     - js/ (carpeta completa) ✓
+     - Todos los archivos .md ✓
+     - .gitignore ✓
+     - guia-rapida.html ✓
+  
+  3. Copiar y pegar en Ventana B
+  4. Confirmar "Reemplazar" si pregunta
+
+PASO 4: HACER COMMIT Y PUSH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. Volver a GitHub Desktop
+  2. Verás TODOS los cambios en la columna izquierda
+  3. En "Summary" (abajo izquierda) escribir:
+     "Fix: Actualizar rutas para GitHub Pages"
+  4. Clic en "Commit to main" (botón azul)
+  5. Clic en "Push origin" (botón arriba a la derecha)
+  6. ¡LISTO! Esperar 2-5 minutos
+
+═══════════════════════════════════════════════════════════════════
+    MÉTODO ALTERNATIVO: SUBIR POR WEB (Sin instalar nada)
+═══════════════════════════════════════════════════════════════════
+
+OPCIÓN A: Borrar y subir todo nuevo
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. Ir a: https://github.com/FRANK032004/FarmaSystem
+  2. Clic en cada archivo/carpeta → "Delete"
+  3. Clic en "Add file" → "Upload files"
+  4. Arrastrar TODA la carpeta desde:
+     C:\xampp\htdocs\SISTEMA FARMACIA
+  5. Escribir: "Fix: Actualizar rutas para GitHub Pages"
+  6. Clic en "Commit changes"
+
+OPCIÓN B: Actualizar solo index.html
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. Ir a: https://github.com/FRANK032004/FarmaSystem
+  2. Clic en "index.html"
+  3. Clic en el ícono del lápiz (Edit)
+  4. BORRAR todo el contenido
+  5. Abrir con Bloc de Notas:
+     C:\xampp\htdocs\SISTEMA FARMACIA\index.html
+  6. Copiar TODO el contenido
+  7. Pegar en GitHub
+  8. Clic en "Commit changes"
+
+═══════════════════════════════════════════════════════════════════
+    VERIFICAR QUE TODO ESTÉ EN GITHUB
+═══════════════════════════════════════════════════════════════════
+
+Ir a: https://github.com/FRANK032004/FarmaSystem
+
+Debe verse así:
+  📁 css/
+     └── styles.css ✓
+  📁 js/
+     ├── app.js ✓
+     ├── data.js ✓
+     ├── utils.js ✓
+     └── 📁 modules/
+         ├── clientes.js ✓
+         ├── dashboard.js ✓
+         ├── inventario.js ✓
+         ├── pos.js ✓
+         ├── proveedores.js ✓
+         ├── recetas.js ✓
+         └── reportes.js ✓
+  📄 .gitignore ✓
+  📄 index.html ✓
+  📄 guia-rapida.html ✓
+  📄 README.md ✓
+  📄 (otros archivos .md) ✓
+
+═══════════════════════════════════════════════════════════════════
+    CONFIGURAR GITHUB PAGES
+═══════════════════════════════════════════════════════════════════
+
+1. Ir a: https://github.com/FRANK032004/FarmaSystem/settings/pages
+
+2. Verificar configuración:
+   ┌─────────────────────────────────────┐
+   │ Source: Deploy from a branch        │
+   │ Branch: main ▼      / (root) ▼      │
+   │           [Save]                     │
+   └─────────────────────────────────────┘
+
+3. Si no está así, cambiar y guardar
+
+═══════════════════════════════════════════════════════════════════
+    PROBAR QUE FUNCIONE
+═══════════════════════════════════════════════════════════════════
+
+PASO 1: ESPERAR 2-5 MINUTOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  GitHub Pages necesita tiempo para actualizar
+
+PASO 2: VISITAR LA PÁGINA
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+  URL: https://frank032004.github.io/FarmaSystem/
+
+PASO 3: FORZAR RECARGA SIN CACHÉ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Windows: Ctrl + Shift + R
+  O abrir en ventana incógnito
+
+PASO 4: VERIFICAR EN CONSOLA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. Presionar F12
+  2. Ir a pestaña "Console"
+  3. NO debe haber errores 404
+  4. Debe verse el sistema con estilos
+
+═══════════════════════════════════════════════════════════════════
+    ¿SIGUE SIN FUNCIONAR? 🆘
+═══════════════════════════════════════════════════════════════════
+
+✓ Verificar que TODOS los archivos estén en GitHub (no solo index.html)
+✓ Verificar que las carpetas se llamen "css" y "js" (minúsculas)
+✓ Presionar Ctrl+Shift+R para forzar recarga
+✓ Abrir consola (F12) y buscar errores específicos
+✓ Esperar hasta 10 minutos (a veces tarda más)
+✓ Probar en navegador incógnito
+✓ Verificar que Settings → Pages esté configurado en "main" y "/ (root)"
+
+═══════════════════════════════════════════════════════════════════
+    CONTACTOS ÚTILES
+═══════════════════════════════════════════════════════════════════
+
+Repositorio: https://github.com/FRANK032004/FarmaSystem
+Página Web:  https://frank032004.github.io/FarmaSystem/
+
+═══════════════════════════════════════════════════════════════════
+
+🎉 ¡TU SISTEMA ESTÁ LISTO PARA GITHUB PAGES! 🎉
+
+Los cambios más importantes fueron:
+  • css/styles.css → ./css/styles.css
+  • js/*.js → ./js/*.js
+  
+Esto asegura que las rutas funcionen correctamente en GitHub Pages.
+
+═══════════════════════════════════════════════════════════════════

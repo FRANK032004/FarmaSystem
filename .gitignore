@@ -1,0 +1,20 @@
+# Sistema Farmacia - Archivos a ignorar
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Carpetas de IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Archivos temporales
+*~
+.tmp

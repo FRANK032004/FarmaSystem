@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Archivos - FarmaSystem</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .check-item {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        .check-item.checking {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+        .check-item.success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        .check-item.error {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+        .icon {
+            font-size: 24px;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+        .message {
+            flex: 1;
+        }
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .summary {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .summary h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+        .badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .badge.success {
+            background: #28a745;
+            color: white;
+        }
+        .badge.error {
+            background: #dc3545;
+            color: white;
+        }
+        .instructions {
+            background: #e7f3ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #0066cc;
+        }
+        .instructions h3 {
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+        .instructions ul {
+            margin-left: 20px;
+        }
+        .instructions li {
+            margin: 8px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Verificación de Archivos</h1>
+        <p class="subtitle">Sistema de Gestión Farmacéutica - GitHub Pages</p>
+
+        <div id="checks">
+            <div class="check-item checking" id="check-css">
+                <div class="icon">⏳</div>
+                <div class="message">Verificando archivos CSS...</div>
+            </div>
+            <div class="check-item checking" id="check-js-core">
+                <div class="icon">⏳</div>
+                <div class="message">Verificando archivos JS principales...</div>
+            </div>
+            <div class="check-item checking" id="check-js-modules">
+                <div class="icon">⏳</div>
+                <div class="message">Verificando módulos JS...</div>
+            </div>
+            <div class="check-item checking" id="check-paths">
+                <div class="icon">⏳</div>
+                <div class="message">Verificando rutas en index.html...</div>
+            </div>
+        </div>
+
+        <div class="summary" id="summary" style="display: none;">
+            <h2>📊 Resumen de Verificación</h2>
+            <div class="summary-item">
+                <span>Archivos CSS:</span>
+                <span class="badge" id="badge-css">Verificando...</span>
+            </div>
+            <div class="summary-item">
+                <span>Archivos JS principales:</span>
+                <span class="badge" id="badge-js-core">Verificando...</span>
+            </div>
+            <div class="summary-item">
+                <span>Módulos JS:</span>
+                <span class="badge" id="badge-js-modules">Verificando...</span>
+            </div>
+            <div class="summary-item">
+                <span>Rutas correctas:</span>
+                <span class="badge" id="badge-paths">Verificando...</span>
+            </div>
+        </div>
+
+        <div class="instructions" id="instructions" style="display: none;">
+            <h3>📝 Siguientes Pasos</h3>
+            <ul id="next-steps"></ul>
+        </div>
+
+        <button class="btn" onclick="runCheck()">🔄 Verificar Nuevamente</button>
+    </div>
+
+    <script>
+        let checkResults = {
+            css: false,
+            jsCore: false,
+            jsModules: false,
+            paths: false
+        };
+
+        async function checkFile(url) {
+            try {
+                const response = await fetch(url);
+                return response.ok;
+            } catch (error) {
+                return false;
+            }
+        }
+
+        async function runCheck() {
+            // Resetear
+            document.getElementById('summary').style.display = 'none';
+            document.getElementById('instructions').style.display = 'none';
+
+            // Verificar CSS
+            const cssExists = await checkFile('./css/styles.css');
+            updateCheck('check-css', cssExists, 'Archivo CSS (styles.css)');
+            checkResults.css = cssExists;
+            updateBadge('badge-css', cssExists);
+
+            // Verificar JS Core
+            const jsFiles = ['./js/app.js', './js/data.js', './js/utils.js'];
+            let allJsCoreExists = true;
+            for (const file of jsFiles) {
+                const exists = await checkFile(file);
+                if (!exists) allJsCoreExists = false;
+            }
+            updateCheck('check-js-core', allJsCoreExists, 'Archivos JS principales (app.js, data.js, utils.js)');
+            checkResults.jsCore = allJsCoreExists;
+            updateBadge('badge-js-core', allJsCoreExists);
+
+            // Verificar Módulos JS
+            const moduleFiles = [
+                './js/modules/dashboard.js',
+                './js/modules/pos.js',
+                './js/modules/inventario.js',
+                './js/modules/clientes.js',
+                './js/modules/recetas.js',
+                './js/modules/proveedores.js',
+                './js/modules/reportes.js'
+            ];
+            let allModulesExist = true;
+            for (const file of moduleFiles) {
+                const exists = await checkFile(file);
+                if (!exists) allModulesExist = false;
+            }
+            updateCheck('check-js-modules', allModulesExist, 'Módulos JS (7 archivos)');
+            checkResults.jsModules = allModulesExist;
+            updateBadge('badge-js-modules', allModulesExist);
+
+            // Verificar rutas en HTML
+            const pathsCorrect = checkHTMLPaths();
+            updateCheck('check-paths', pathsCorrect, 'Rutas en index.html con ./ (correcto para GitHub Pages)');
+            checkResults.paths = pathsCorrect;
+            updateBadge('badge-paths', pathsCorrect);
+
+            // Mostrar resumen
+            document.getElementById('summary').style.display = 'block';
+            
+            // Mostrar instrucciones
+            showInstructions();
+        }
+
+        function updateCheck(elementId, success, message) {
+            const element = document.getElementById(elementId);
+            element.className = 'check-item ' + (success ? 'success' : 'error');
+            element.innerHTML = `
+                <div class="icon">${success ? '✅' : '❌'}</div>
+                <div class="message">${success ? '✓' : '✗'} ${message}</div>
+            `;
+        }
+
+        function updateBadge(elementId, success) {
+            const badge = document.getElementById(elementId);
+            badge.className = 'badge ' + (success ? 'success' : 'error');
+            badge.textContent = success ? '✓ OK' : '✗ Error';
+        }
+
+        function checkHTMLPaths() {
+            const scripts = document.querySelectorAll('script[src]');
+            const links = document.querySelectorAll('link[href]');
+            
+            let allCorrect = true;
+            
+            scripts.forEach(script => {
+                const src = script.getAttribute('src');
+                if (src && src.startsWith('js/')) {
+                    allCorrect = false;
+                }
+            });
+            
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('css/')) {
+                    allCorrect = false;
+                }
+            });
+            
+            return allCorrect;
+        }
+
+        function showInstructions() {
+            const instructionsDiv = document.getElementById('instructions');
+            const stepsList = document.getElementById('next-steps');
+            instructionsDiv.style.display = 'block';
+            
+            const allOk = checkResults.css && checkResults.jsCore && checkResults.jsModules && checkResults.paths;
+            
+            if (allOk) {
+                stepsList.innerHTML = `
+                    <li><strong>¡Todo está correcto! ✓</strong></li>
+                    <li>Todos los archivos están presentes y las rutas son correctas</li>
+                    <li>Tu sistema debería funcionar perfectamente en GitHub Pages</li>
+                    <li>Si aún ves problemas, presiona <strong>Ctrl + Shift + R</strong> para limpiar caché</li>
+                    <li>Visita: <a href="index.html">Ir al Sistema Principal</a></li>
+                `;
+            } else {
+                stepsList.innerHTML = '<li><strong>Se encontraron problemas:</strong></li>';
+                
+                if (!checkResults.css) {
+                    stepsList.innerHTML += '<li>❌ Falta el archivo CSS. Verifica que exista: css/styles.css</li>';
+                }
+                if (!checkResults.jsCore) {
+                    stepsList.innerHTML += '<li>❌ Faltan archivos JS principales. Verifica: js/app.js, js/data.js, js/utils.js</li>';
+                }
+                if (!checkResults.jsModules) {
+                    stepsList.innerHTML += '<li>❌ Faltan módulos JS. Verifica la carpeta: js/modules/</li>';
+                }
+                if (!checkResults.paths) {
+                    stepsList.innerHTML += '<li>❌ Las rutas en index.html no tienen ./  - Este archivo puede estar desactualizado</li>';
+                }
+                
+                stepsList.innerHTML += `
+                    <li><strong>Solución:</strong></li>
+                    <li>1. Asegúrate de subir TODA la carpeta del proyecto a GitHub</li>
+                    <li>2. No solo el index.html, sino también las carpetas css/ y js/</li>
+                    <li>3. Espera 5 minutos y recarga esta página</li>
+                    <li>4. Lee el archivo: <strong>INSTRUCCIONES-SUBIR-GITHUB.txt</strong></li>
+                `;
+            }
+        }
+
+        // Ejecutar verificación automáticamente al cargar
+        window.onload = function() {
+            setTimeout(runCheck, 500);
+        };
+    </script>
+</body>
+</html>
